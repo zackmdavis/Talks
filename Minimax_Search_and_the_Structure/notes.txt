@@ -1,0 +1,11 @@
+If I speak at 130 words/minute, then the script should be—
+
+Origin: 130 words
+The algorithm: 520 words
+Instrumental goals: 330 words
+Counterfactual reasoning: 330 words
+
+explain minimax search, and how we can use traits to build an AI that works on multiple games, withas many philosophy-of-computer-science detours as I can get away with—
+
+decision theory?
+compilers optimize away undefined behavior because they've proved it can't happen
