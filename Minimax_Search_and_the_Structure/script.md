@@ -14,6 +14,31 @@ Consider a two-player board game like chess—or tic-tac-toe, Reversi, or indeed
 
 [SLIDE: chess point values]
 
-Because only one player can win the game, what's good for one player is equally bad for the other.
+Because only one player can win the game, what's good for one player is equally bad for the other: so if we add up all the piece values for one player, and _subtract_ all the piece values for the other, we get a "score" for the board position that the first player is trying to maximize, and the second player is trying to minimize.
 
-if we know how to evaluate how "good" a position is for a player (and therefore, by zero-sumness, how bad it is for the other player), and we know how to compute the set of legal next moves given a position, then we can recursively search the "game tree" to a given depth, working out "my best move, GIVEN her best reply, GIVEN my best counterreply, GIVEN her best counter-counterreply ..." The game tree grows exponentially, but there's a trick to speed it up called alpha-beta pruning, in which we keep track of the best guaranteed score for each player and eliminate branches of the game tree that are "too good to be true," which would require a player to act against her own interest.
+[SLIDE: pseudocode]
+
+```
+fn choose(current_position) {
+    best_score = -∞
+    best_move = None
+    for move in my_legal_moves(current_position) {
+        position = make_move(current_position, move)
+        score = score_position(position)
+        if score > best_score {
+            best_score = score
+            best_move = move 
+        }
+    }
+}
+```
+
+So consider a player pondering her move. For every possible legal move she could make, she knows what the board position will look like after that move, and can calculate the value of that position. So you might think she should choose the move that results in the best value: for example, if she can capture the opponent's queen, that would make the subsequent board position be worth 9 more points.
+
+The problem with that is that it's short-sighted. If capturing the opponent's queen would just result in the opponent capturing the first player's queen back, then what looked like a 9 point gain after one turn, ends up being a wash after both players have taken their turn.
+
+To take this into account, the first player should consider not just the immediate outcome of her move, but what the other player is likely to do after that. And the way the first player can compute that is by asking, well, what would _I_ do if I were in that position, except trying to minimize the score rather than maximizing it?
+
+------
+
+ we can recursively search the "game tree" to a given depth, working out "my best move, GIVEN her best reply, GIVEN my best counterreply, GIVEN her best counter-counterreply ..." The game tree grows exponentially, but there's a trick to speed it up called alpha-beta pruning, in which we keep track of the best guaranteed score for each player and eliminate branches of the game tree that are "too good to be true," which would require a player to act against her own interest.
