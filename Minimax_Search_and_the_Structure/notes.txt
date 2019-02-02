@@ -7,5 +7,45 @@ Counterfactual reasoning: 330 words
 
 explain minimax search, and how we can use traits to build an AI that works on multiple games, withas many philosophy-of-computer-science detours as I can get away with—
 
+It might even be worth cutting the part about alpha-beta pruning in order to have more time to talk about philosophy??
+
+The game tree grows exponentially, so this is pretty expensive. There are a number of tricks to speed it up, one of the most important and philosophically interesting of which is called alpha-beta pruning. While we're searching the game tree, we keep track of the minimum score that the maximizing player is guaranteed—call that alpha—and the maximum score that the minimizing player is guaranteed—call that beta—and if beta ever becomes less than alpha, we know that 
+
+
 decision theory?
 compilers optimize away undefined behavior because they've proved it can't happen
+
+
+```
+fn choose(current_position) {
+    best_score = -∞
+    best_move = None
+    for move in my_legal_moves(current_position) {
+        position = make_move(current_position, move)
+        score = score_position(position)
+        if score > best_score {
+            best_score = score
+            best_move = move 
+        }
+    }
+}
+```
+
+
+```
+fn minimax(current_position, depth) {
+   
+
+    best_score = -∞
+    best_move = None
+    for move in my_legal_moves(current_position) {
+        position = make_move(current_position, move)
+        score = score_position(position)
+        if score > best_score {
+            best_score = score
+            best_move = move 
+        }
+    }
+}
+```
+
