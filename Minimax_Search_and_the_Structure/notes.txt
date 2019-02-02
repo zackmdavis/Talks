@@ -33,8 +33,8 @@ fn choose(current_position) {
 
 
 ```
-fn minimax(current_position, depth) {
-   
+fn minimax(current_position, remaining_depth) {
+   if
 
     best_score = -∞
     best_move = None
