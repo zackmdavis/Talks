@@ -10,7 +10,7 @@ It all started at my old dayjob, where some of my coworkers had an office chess 
 
 [SLIDE: TODO chess vs. Leafline piece names]
 
-My program wasn't actually terribly good, but I learned a lot about how to think—how the process of making subjectively free-willed decisions can be reduced to an algorithm.
+My program wasn't actually terribly good, but I learned a lot about _how to think_, for the same reason that building a submarine in your garage in a great way to learn how to swim.
 
 ------
 
@@ -36,9 +36,9 @@ To take this into account, the first player should consider not just the immedia
 
 ------
 
-So, that's how you play chess. I want to tell you about two surprising philosophical implications I learned from this endeavor.
+So, that's how you play chess. I want to tell you about two more philosophical insights I learned from this endeavor.
 
-First, on the emergence of intstrumental goals. Some decision theorists like to distinguish between "terminal" goals and "instrumental" goals. Terminal goals are things that you want to achieve for their own sake—for example, love, or happiness, or winning a chess game, or godlike understanding of the true structure of the world beneath the world. Whereas instrumental goals are things that you want to achieve _because_ they lead to terminal goals: for example, washing your hair, or getting enough sleep, or capturing one of your opponent's pawns.
+First, the emergence of intstrumental goals. Some decision theorists like to distinguish between "terminal" goals and "instrumental" goals. Terminal goals are things that you want to achieve for their own sake—for example, love, or happiness, or winning a chess game, or godlike understanding of the true structure of the world beneath the world. Whereas instrumental goals are things that you want to achieve _because_ they lead to terminal goals: for example, washing your hair, or getting enough sleep, or capturing one of your opponent's pawns.
 
 Chess enthusiasts have names for special board situations that are advantageous for a player.
 
@@ -54,4 +54,10 @@ When observing a chess engine's behavior, it's very tempting to intepret it in s
 
 [SLIDE: again, negamax_pseudocode.png]
 
-But it _can't_ be, because those _concepts_ aren't _represented_ anywhere in the algorithm! The code is just brute-forcing the game tree to find sequences of moves that result in capturing material. Humans don't have the raw computational power to do this efficiently, so we tend to _notice_
+But it _can't_ be—_literally_ can't be—because those _concepts_ aren't _represented_ anywhere in the algorithm! The code is just brute-forcing the game tree to find sequences of moves that result in capturing material. Humans don't have the raw computational power to do this efficiently, so we tend to notice features of board situations that lead to capturing matrial and give them special names, and treat them as instrumental goals to be sought out—as, indeed, our piece-counting score in our chess engine is actually just an instrumental goal that happens to typically be useful towards the terminal goal of check mate.
+
+Similarly, if you could God's-eye-view brute-force search for the optimal paths through a human life, _many_ such paths would, as a statistical regularity, happen to involve getting enough sleep—and if you don't have a computer the size of the moon, you might just want to treat that as a tactical goal to reason about directly.
+
+-----
+
+Second insight! Something about counterfactual reasoning. The adversarial, recursive nature of this "my best move _given_ her best move _given_ my best move" _&c._ reasoning leads to some behavior that looks _very_ strange
