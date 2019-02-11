@@ -38,7 +38,7 @@ To take this into account, the first player should consider not just the immedia
 
 So, that's how you play chess. I want to tell you about two more philosophical insights I learned from this endeavor.
 
-First, the emergence of intstrumental goals. Some decision theorists like to distinguish between "terminal" goals and "instrumental" goals. Terminal goals are things that you want to achieve for their own sake—for example, love, or happiness, or winning a chess game, or godlike understanding of the true structure of the world beneath the world. Whereas instrumental goals are things that you want to achieve _because_ they lead to terminal goals: for example, washing your hair, or getting enough sleep, or capturing one of your opponent's pawns.
+First, on the emergence of intstrumental goals. Some decision theorists like to distinguish between "terminal" goals and "instrumental" goals. Terminal goals are things that you want to achieve for their own sake—for example, love, or happiness, or winning a chess game, or godlike understanding of the true structure of the world beneath the world. Whereas instrumental goals are things that you want to achieve _because_ they lead to terminal goals: for example, washing your hair, or getting enough sleep, or capturing one of your opponent's pawns.
 
 Chess enthusiasts have names for special board situations that are advantageous for a player.
 
@@ -56,8 +56,24 @@ When observing a chess engine's behavior, it's very tempting to intepret it in s
 
 But it _can't_ be—_literally_ can't be—because those _concepts_ aren't _represented_ anywhere in the algorithm! The code is just brute-forcing the game tree to find sequences of moves that result in capturing material. Humans don't have the raw computational power to do this efficiently, so we tend to notice features of board situations that lead to capturing matrial and give them special names, and treat them as instrumental goals to be sought out—as, indeed, our piece-counting score in our chess engine is actually just an instrumental goal that happens to typically be useful towards the terminal goal of check mate.
 
-Similarly, if you could God's-eye-view brute-force search for the optimal paths through a human life, _many_ such paths would, as a statistical regularity, happen to involve getting enough sleep—and if you don't have a computer the size of the moon, you might just want to treat that as a tactical goal to reason about directly.
+Similarly, if you could do a God's-eye-view brute-force search for the optimal paths through a human life, _many_ such paths would, as a statistical regularity, happen to involve getting enough sleep—and if you don't have a computer the size of the moon, you might just want to treat that as an instrumental, tactical goal to reason about directly.
 
 -----
 
-Second insight! Something about counterfactual reasoning. The adversarial, recursive nature of this "my best move _given_ her best move _given_ my best move" _&c._ reasoning leads to some behavior that looks _very_ strange
+Second insight! On counterfactual reasoning. The adversarial, recursive nature of this "my best move _given_ her best move _given_ my best move" _&c._ reasoning leads to some behavior that looks _very_ strange compared to how you would reason about optimizing an environment that _isn't_ intelligently opposing your goals. If you're not facing an intelligent opponent, you should just make plans to directly accomplish your goals: and in particular, you wouldn't bother trying things that you can _predict_ won't work, won't happen [TODO: concrete example].
+
+In contrast, facing an intelligent opponent, you need to take into account how your choices affect your opponent's choices. This leads our algorithm to set up attacks that it _predicts_ won't be realized, because the credible _threat_ constrains the opposing player's choices.
+
+[TODO: concrete game example]
+
+[SLIDE TODO: "Missing Refutations" game position]
+
+[SLIDE TODO: position with knight moved]
+
+[SLIDE TODO: ...]
+
+This, too, has analogues in real life whenever you have situaitons where different agents, different systems, have conflicting goals and can respond to each other's behavior. If people can _predict_ that _if_ they were to commit crimes, then they would be punished—that incentivizes them to obey the law in the first place: the _threat_ of punishment is shaping the population's behavior even if the punishment is never realized.
+
+Similarly, the primatologist Robin Dunbar has observed that just because successful predation of certain monkey species is rare, doesn't mean that behaviors like warning calls [TODO: check factual example?] can't be explained as anti-predator adaptations, for the same reason
+
+[joke about elephants and cherry trees]
