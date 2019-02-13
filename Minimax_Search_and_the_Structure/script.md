@@ -60,20 +60,34 @@ Similarly, if you could do a God's-eye-view brute-force search for the optimal p
 
 -----
 
-Second insight! On counterfactual reasoning. The adversarial, recursive nature of this "my best move _given_ her best move _given_ my best move" _&c._ reasoning leads to some behavior that looks _very_ strange compared to how you would reason about optimizing an environment that _isn't_ intelligently opposing your goals. If you're not facing an intelligent opponent, you should just make plans to directly accomplish your goals: and in particular, you wouldn't bother trying things that you can _predict_ won't work, won't happen [TODO: concrete example].
+Second insight! On counterfactual reasoning. The adversarial, recursive nature of this "my best move _given_ her best move _given_ my best move" _&c._ reasoning leads to some behavior that looks _very_ strange compared to how you would reason about optimizing an environment that _isn't_ intelligently opposing your goals. If you're not facing an intelligent opponent, you should just make plans to directly accomplish your goals: and in particular, you wouldn't bother trying things that you can _predict_ won't happen: you wouldn't bother packing your suitcase if you didn't intend to go anywhere.
 
-In contrast, facing an intelligent opponent, you need to take into account how your choices affect your opponent's choices. This leads our algorithm to set up attacks that it _predicts_ won't be realized, because the credible _threat_ constrains the opposing player's choices.
+On the other hand, maybe you _would_ bother loading a gun even if you didn't intend to fire it. When facing an intelligent opponent, you need to take into account how your choices affect your opponent's choices. This leads our algorithm to set up attacks that it _predicts_ won't be realized, because the credible _threat_ constrains the opposing player's choices: 
 
-[TODO: concrete game example]
+This position came up in a game with my coworkers as part of the engine's planning after moving the Black bishop to b5. [TODO: clarify wording]
 
-[SLIDE TODO: "Missing Refutations" game position]
+[SLIDE TODO: position]
 
-[SLIDE TODO: position with knight moved]
+Here, the engine's predicted move for Black is knight to g3. At a first glance, this looked crazy to me: why would you move the knight to be diagonally in front of those pawns that could capture it?
 
-[SLIDE TODO: ...]
+[SLIDE TODO: moved knight, arrows illustrating threatening pawns]
 
-This, too, has analogues in real life whenever you have situaitons where different agents, different systems, have conflicting goals and can respond to each other's behavior. If people can _predict_ that _if_ they were to commit crimes, then they would be punished—that incentivizes them to obey the law in the first place: the _threat_ of punishment is shaping the population's behavior even if the punishment is never realized.
+And of course, what's actually happening is that moving the knight reveals a discovered attack of the black bishop on f5 against the white queen on c2.
 
-Similarly, the primatologist Robin Dunbar has observed that just because successful predation of certain monkey species is rare, doesn't mean that behaviors like warning calls [TODO: check factual example?] can't be explained as anti-predator adaptations, for the same reason
+[SLIDE TODO: illustrate discovered attack]
 
-[joke about elephants and cherry trees]
+Saving the queen is more important to White than capturing the black knight, allowing Black to use _her_ next turn to capture the white rook on h1.
+
+[SLIDE TODO: illustrate]
+
+But this is pretty weird, right? The algorithm has gone to all this trouble to set up a discovered attack on the white queen—in order to capture the white rook, not the queen!
+
+This kind of behavior has analogues in real life whenever you have situations where different agents, different systems, have conflicting goals and can respond to each other's behavior. If people can _predict_ that _if_ they were to commit crimes, then they would be punished—that incentivizes them to obey the law in the first place: the _threat_ of punishment is shaping the population's behavior even if no one is going to be actually punished for that very reason.
+
+There's an [old joke](https://www.nytimes.com/1988/01/02/opinion/elephant-repellent.html) about a UC Santa Cruz student sprinkling powder outside her dorm, who, when questioned, responds, "Oh, this? It's elephant repellant!"
+
+"But there aren't any elephants in Santa Cruz!" replies the questioner.
+
+The student counterreplies, "Well, that's how you know it's working!"
+
+But you see, sometimes, that actually is the explanation. Thank you.
