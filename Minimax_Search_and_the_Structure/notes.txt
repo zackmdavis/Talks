@@ -5,6 +5,19 @@ The algorithm: 520 words
 Instrumental goals: 330 words
 Counterfactual reasoning: 330 words
 
+----
+
+Promotional Tweet—
+Unfortunately, @bangbangconwest tickets are sold out :tickets: :cold_sweat: so this Tweet is too late to affect your decision whether to come see me talk about "Minimax Search and the Structure of Cognition!" in Santa Cruz on Feb 2X
+
+----
+
+I like this example, but it might be too much inferential distance—
+
+Similarly, the primatologist Robin Dunbar has observed that just because successful predation of certain monkey species is rare, doesn't mean that some of their behavior can't be explained as anti-predator adaptations, for the same reason that just because animals don't usually starve doesn't mean that foraging behaviors aren't about acquiring calories.
+
+---------
+
 explain minimax search, and how we can use traits to build an AI that works on multiple games, withas many philosophy-of-computer-science detours as I can get away with—
 
 It might even be worth cutting the part about alpha-beta pruning in order to have more time to talk about philosophy??
