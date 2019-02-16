@@ -8,7 +8,7 @@ It all started at my old dayjob, where some of my coworkers had an office chess 
 
 (Actually, I felt like writing a chess engine was too much of a cliché, so I decided that _my_ program was an AI for a game that _happens_ to be exactly like chess, except that everything has different names.)
 
-[SLIDE: TODO chess vs. Leafline piece names]
+[SLIDE: chess vs. Leafline piece names]
 
 My program wasn't actually terribly good, but I learned a lot about _how to think_, for the same reason that building a submarine in your garage in a great way to learn how to swim.
 
@@ -26,7 +26,7 @@ So consider a player pondering her move. For every possible legal move she could
 
 The problem with that is that it's short-sighted. If capturing the opponent's queen would just result in the opponent capturing the first player's queen back, then what looked like a 9 point gain after one turn, ends up being a wash after both players have taken their turn.
 
-[SLIDE: TODO game tree]
+[SLIDE: game tree]
 
 To take this into account, the first player should consider not just the immediate outcome of her move, but what the other player is likely to do after that. And the way the first player can compute what she predicts the second player will do is by asking, well, what would _I_ do if I were in that position, except trying to minimize the score rather than maximizing it?
 
@@ -66,19 +66,19 @@ On the other hand, maybe you _would_ bother loading a gun even if you didn't int
 
 This position came up in a game with my coworkers as part of the engine's planning after moving the Black bishop to b5. [TODO: clarify wording]
 
-[SLIDE TODO: position]
+[SLIDE: scenario, pt. 1]
 
 Here, the engine's predicted move for Black is knight to g3. At a first glance, this looked crazy to me: why would you move the knight to be diagonally in front of those pawns that could capture it?
 
-[SLIDE TODO: moved knight, arrows illustrating threatening pawns]
+[SLIDE: scenario, pt 2: moved knight, arrows illustrating threatening pawns]
 
 And of course, what's actually happening is that moving the knight reveals a discovered attack of the black bishop on f5 against the white queen on c2.
 
-[SLIDE TODO: illustrate discovered attack]
+[SLIDE: scenario, pt. 3: illustrate discovered attack]
 
 Saving the queen is more important to White than capturing the black knight, allowing Black to use _her_ next turn to capture the white rook on h1.
 
-[SLIDE TODO: illustrate]
+[SLIDE: scenario, pt. 4: captured "rook"/cop]
 
 But this is pretty weird, right? The algorithm has gone to all this trouble to set up a discovered attack on the white queen—in order to capture the white rook, not the queen!
 
@@ -86,7 +86,7 @@ This kind of behavior has analogues in real life whenever you have situations wh
 
 There's an [old joke](https://www.nytimes.com/1988/01/02/opinion/elephant-repellent.html) about a UC Santa Cruz student sprinkling powder outside her dorm, who, when questioned, responds, "Oh, this? It's elephant repellant!"
 
-"But there aren't any elephants in Santa Cruz!" replies the questioner.
+The questioner replies, "But there aren't any elephants in Santa Cruz!"
 
 The student counterreplies, "Well, that's how you know it's working!"
 

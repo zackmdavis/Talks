@@ -8,7 +8,19 @@ Counterfactual reasoning: 330 words
 ----
 
 Promotional Tweet—
-Unfortunately, @bangbangconwest tickets are sold out :tickets: :cold_sweat: so this Tweet is too late to affect your decision whether to come see me talk about "Minimax Search and the Structure of Cognition!" in Santa Cruz on Feb 2X
+Unfortunately, @bangbangconwest tickets are sold out :tickets: :cold_sweat: (https://twitter.com/bangbangconwest/status/1088194167254052864) so this Tweet is too late to affect your decision whether to come see me on "Minimax Search and the Structure of Cognition!" in Santa Cruz next weekend
+
+----
+
+    a b c d e f g h
+ 8 ♜       ♜   ♚   
+ 7 ♟ ♟ ♟     ♟ ♟ ♟ 
+ 6                 
+ 5           ♝     
+ 4   ♗   ♛         
+ 3 ♙           ♞   
+ 2   ♙ ♕     ♙ ♙ ♙ 
+ 1 ♖ ♘ ♔     ♗   ♖ 
 
 ----
 
