@@ -24,9 +24,9 @@ Because only one player can win the game, what's good for one player is equally 
 
 So consider a player pondering her move. For every possible legal move she could make, she knows what the board position will look like after that move, and can calculate the value of that position. So you might think she should choose the move that results in the best value: for example, if she can capture the opponent's queen, that would make the subsequent board position be worth 9 more points.
 
-The problem with that is that it's short-sighted. If capturing the opponent's queen would just result in the opponent capturing the first player's queen back, then what looked like a 9 point gain after one turn, ends up being a wash after both players have taken their turn.
-
 [SLIDE: game tree]
+
+The problem with that is that it's short-sighted. If capturing the opponent's queen would just result in the opponent capturing the first player's queen back, then what looked like a 9 point gain after one turn, ends up being a wash after both players have taken their turn.
 
 To take this into account, the first player should consider not just the immediate outcome of her move, but what the other player is likely to do after that. And the way the first player can compute what she predicts the second player will do is by asking, well, what would _I_ do if I were in that position, except trying to minimize the score rather than maximizing it?
 
@@ -38,7 +38,7 @@ To take this into account, the first player should consider not just the immedia
 
 So, that's how you play chess. I want to tell you about two more philosophical insights I learned from this endeavor.
 
-First, on the emergence of intstrumental goals. Some decision theorists like to distinguish between "terminal" goals and "instrumental" goals. Terminal goals are things that you want to achieve for their own sake—for example, love, or happiness, or winning a chess game, or godlike understanding of the true structure of the world beneath the world. Whereas instrumental goals are things that you want to achieve _because_ they lead to terminal goals: for example, washing your hair, or getting enough sleep, or capturing one of your opponent's pawns.
+First, on the emergence of intstrumental goals. Some decision theorists like to distinguish between "terminal" goals and "instrumental" goals. Terminal goals are things that you want to achieve for their own sake—for example, love, or happiness, or winning a chess game. Whereas instrumental goals are things that you want to achieve _because_ they lead to terminal goals: for example, washing your hair, or getting enough sleep, or capturing one of your opponent's pawns.
 
 Chess enthusiasts have names for special board situations that are advantageous for a player.
 
@@ -56,7 +56,7 @@ When observing a chess engine's behavior, it's very tempting to intepret it in s
 
 But it _can't_ be—_literally_ can't be—because those _concepts_ aren't _represented_ anywhere in the algorithm! The code is just brute-forcing the game tree to find sequences of moves that result in capturing material. Humans don't have the raw computational power to do this efficiently, so we tend to notice features of board situations that lead to capturing matrial and give them special names, and treat them as instrumental goals to be sought out—as, indeed, our piece-counting score in our chess engine is actually just an instrumental goal that happens to typically be useful towards the terminal goal of check mate.
 
-Similarly, if you could do a God's-eye-view brute-force search for the optimal paths through a human life, _many_ such paths would, as a statistical regularity, happen to involve getting enough sleep—and if you don't have a computer the size of the moon, you might just want to treat that as an instrumental, tactical goal to reason about directly.
+Similarly, if you could do a God's-eye-view brute-force search for the optimal paths through a human life, _many_ such paths would, as a statistical regularity, happen to involve getting enough sleep—and if you have limited computational power, you might just want to treat that as an instrumental, tactical goal to reason about directly.
 
 -----
 
@@ -64,7 +64,7 @@ Second insight! On counterfactual reasoning. The adversarial, recursive nature o
 
 On the other hand, maybe you _would_ bother loading a gun even if you didn't intend to fire it. When facing an intelligent opponent, you need to take into account how your choices affect your opponent's choices. This leads our algorithm to set up attacks that it _predicts_ won't be realized, because the credible _threat_ constrains the opposing player's choices: 
 
-This position came up in a game with my coworkers as part of the engine's planning after moving the Black bishop to b5. [TODO: clarify wording]
+This position came up in a game with my coworkers as part of the engine's planning after moving the Black bishop to b5.
 
 [SLIDE: scenario, pt. 1]
 
