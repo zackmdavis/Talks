@@ -14,7 +14,7 @@ My program wasn't actually terribly good, but I learned a lot about _how to thin
 
 ------
 
-Consider a two-player board game like chess—or tic-tac-toe, Reversi, or indeed, _any_ two-player, zero-sum, perfect information game. Suppose we know how to calculate how "good" a particular board position is for a player—in chess, this is traditionally done by assigning a point value to each type of piece and totaling up the point values of remaining pieces for each player.
+Consider a two-player board game like chess—or indeed, _any_ two-player, zero-sum, perfect information game. Suppose we know how to calculate how "good" a particular board position is for a player—in chess, this is traditionally done by assigning a point value to each type of piece and totaling up the point values of remaining pieces for each player.
 
 [SLIDE: chess_piece_relative_value.png]
 
@@ -64,7 +64,7 @@ Second insight! On counterfactual reasoning. The adversarial, recursive nature o
 
 On the other hand, maybe you _would_ bother loading a gun even if you didn't intend to fire it. When facing an intelligent opponent, you need to take into account how your choices affect your opponent's choices. This leads our algorithm to set up attacks that it _predicts_ won't be realized, because the credible _threat_ constrains the opposing player's choices: 
 
-This position came up in a game with my coworkers as part of the engine's planning after moving the Black bishop to b5.
+This position came up in a game with my coworkers as part of the engine's planning shortly after moving the Black bishop to f5. (In "algebraic" notation where the columns of the board are lettered a through h and the rows are labeled 1 through 8.)
 
 [SLIDE: scenario, pt. 1]
 
